@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/8j1oxmWuLddVzBqeVjDxPW62nV4\"",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/WQZkQjC57Rq2Q3t2ZsEvwrwIuII\"",
  "discoveryVersion": "v1",
  "id": "casaDeLaTaraEndpoint:v1",
  "name": "casaDeLaTaraEndpoint",
@@ -121,6 +121,28 @@
   }
  },
  "methods": {
+  "deletePost": {
+   "id": "casaDeLaTaraEndpoint.deletePost",
+   "path": "posts/{id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "GenericResponse"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "getPosts": {
    "id": "casaDeLaTaraEndpoint.getPosts",
    "path": "genericresponse",

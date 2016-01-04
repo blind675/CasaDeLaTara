@@ -5,9 +5,7 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>
-                endpoint.backend.Endpoint
-            </param-value>
+            <param-value>endpoint.backend.Endpoint</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
@@ -17,6 +15,6 @@
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
-        <welcome-file>admin</welcome-file>
+        <welcome-file>sample/app</welcome-file>
     </welcome-file-list>
 </web-app>

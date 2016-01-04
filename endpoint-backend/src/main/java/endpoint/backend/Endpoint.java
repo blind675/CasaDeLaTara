@@ -33,7 +33,7 @@ public class Endpoint {
         List<PostRecord> records = OfyService.ofy().load().type(PostRecord.class).list();
 
         GenericResponse response = new GenericResponse();
-        response.setStatusCode(1);
+        response.setStatusCode(0);
 
         List<PostDTO> returnList = new ArrayList<>();
 
@@ -59,8 +59,32 @@ public class Endpoint {
         OfyService.ofy().save().entity(record).now();
 
         GenericResponse response = new GenericResponse();
-        response.setStatusCode(1);
+        response.setStatusCode(0);
 
         return response;
     }
+
+    @ApiMethod(name = "deletePost")
+    public GenericResponse deletePosts(@Named("id") Long id) {
+
+        PostRecord record = findPostInternal(id);
+        GenericResponse response = new GenericResponse();
+        response.setStatusCode(0);
+
+        if(record == null) {
+            response.setStatusCode(1);
+
+            return response;
+        }
+
+        OfyService.ofy().delete().entity(record).now();
+
+        return response;
+    }
+
+    //Private method to retrieve a <code>PostRecord</code> record
+    private PostRecord findPostInternal(Long id) {
+        return OfyService.ofy().load().type(PostRecord.class).id(id).now();
+    }
+
 }
