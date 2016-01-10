@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="endpoint-backend-android-endpoints">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/endpoint-backend/build/libs/endpoint-backend-android-endpoints.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

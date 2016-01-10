@@ -1,0 +1,59 @@
+<div class="container">
+    <h3>Produse</h3>
+
+    <div class="container animation" ng-hide="is_backend_ready">
+        <svg viewbox="-200 -150 400 300">
+            <defs>
+                <line id="ray" x1="-5" x2="5"></line>
+                <clipPath id="cp">
+                    <rect x="-200" y="-150" width="400" height="150"></rect>
+                </clipPath>
+            </defs>
+            <line id="line" x1="-76" x2="76"></line>
+            <text text-anchor="middle" y="45" class="animation-text">Ferma Lui Danutz</text>
+            <g id="sun" clip-path="url(#cp)">
+                <g id="mover">
+                    <circle id="main" r="50"></circle>
+                    <g id="eyes">
+                        <circle r="3" cx="-13"></circle>
+                        <circle r="3" cx="13"></circle>
+                    </g>
+                    <g id="rays">
+                        <use xlink:href="#ray" transform="rotate(315) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(270) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(225) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(180) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(135) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(90) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(45) translate(70)"></use>
+                        <use xlink:href="#ray" transform="rotate(0) translate(70)"></use>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <table class="table table-striped" ng-show="is_backend_ready" ng-if="is_backend_ready" ng-init="loadAllPosts()">
+        <thead>
+        <tr>
+            <th>Poza</th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th>Data Adaugarii</th>
+            <th>Numarul de produse</th>
+            <th>Sterge</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="post in posts">
+            <td><img ng-src="{{post.imageURL}}" class="img-thumbnail" alt="Poza Produs" width="200" height="100"/></td>
+            <td>{{post.name}}</td>
+            <td>{{post.description}}</td>
+            <td>{{post.date | date:'dd-MM-yyyy'}}</td>
+            <td>{{post.numberOfItems}}</td>
+            <td><img src="images/delete.png" alt="Sterge Elementul" ng-click="deletePost(post)" class="img-thumbnail" width="25" height="25"></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
