@@ -15,6 +15,5 @@
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
-        <welcome-file>sample/app</welcome-file>
     </welcome-file-list>
 </web-app>

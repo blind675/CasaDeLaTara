@@ -12,20 +12,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
-  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-  <!--start lightbox -->
-  <script src="js/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/jquery.lightbox.css">
-  <script src="js/jquery.lightbox.js"></script>
-  <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/animation.css" />
+    <link rel="stylesheet" href="css/3-col-portfolio.css" />
+
+    <!--start lightbox -->
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox.css">
+    <script src="js/jquery.lightbox.js"></script>
+    <script>
     // Initiate Lightbox
     $(function() {
       $('.gallery a').lightbox();
     });
-  </script>
+    </script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <!-- my script-->
+    <script src="js/app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
 </head>
 
-<body>
+<body ng-app="casaDeLaTaraClient" ng-controller="casaDeLaTaraClientController" >
   <div class="wrap">
     <div class="wrapper">
       <div class="header">
@@ -66,78 +86,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <div class="main_bg1">
         <div class="main">
           <h2 class="style">Produse</h2>
-          <div class="specials">
-            <div class="specials-grids">
-              <div class="special-grid">
-                <div class="gallery">
-                  <a href="images/pic3.jpg"><img src="images/pic3.jpg" title="image-name"></a>
-                </div>
-                <h3>produs 1</h3>
-                <p class="para">Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
-                <div class="rd_more">
-                  <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
-                </div>
-              </div>
-              <div class="special-grid">
-                <div class="gallery">
-                  <a href="images/pic1.jpg"><img src="images/pic1.jpg" title="image-name"></a>
-                </div>
-                <h3>produs 2</h3>
-                <p class="para">Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
-                <div class="rd_more">
-                  <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
-                </div>
-              </div>
-              <div class="special-grid spe-grid">
-                <div class="gallery">
-                  <a href="images/pic2.jpg"><img src="images/pic2.jpg" title="image-name"></a>
-                </div>
-                <h3>produs 3</h3>
-                <p class="para">Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
-                <div class="rd_more">
-                  <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
-                </div>
-              </div>
-              <div class="clear"> </div>
+
+            <div class="container animation" ng-hide="is_backend_ready">
+                <svg viewbox="-200 -150 400 300">
+                    <defs>
+                        <line id="ray" x1="-5" x2="5"></line>
+                        <clipPath id="cp">
+                            <rect x="-200" y="-150" width="400" height="150"></rect>
+                        </clipPath>
+                    </defs>
+                    <line id="line" x1="-76" x2="76"></line>
+                    <text text-anchor="middle" y="45" class="animation-text">Ferma Lui Danutz</text>
+                    <g id="sun" clip-path="url(#cp)">
+                        <g id="mover">
+                            <circle id="main" r="50"></circle>
+                            <g id="eyes">
+                                <circle r="3" cx="-13"></circle>
+                                <circle r="3" cx="13"></circle>
+                            </g>
+                            <g id="rays">
+                                <use xlink:href="#ray" transform="rotate(315) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(270) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(225) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(180) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(135) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(90) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(45) translate(70)"></use>
+                                <use xlink:href="#ray" transform="rotate(0) translate(70)"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
             </div>
-            <div class="clear"> </div>
-          </div>
-          <div class="specials top">
-            <div class="specials-grids">
-              <div class="special-grid">
-                <div class="gallery">
-                  <a href="images/pic3.jpg"><img src="images/pic3.jpg" title="image-name"></a>
+
+            <div class="specials">
+                <div class="specials-grids">
+                <div class="row" ng-show="is_backend_ready" class="special-grid">
+                    <div class="col-md-4 portfolio-item" ng-repeat="item in items">
+                        <div class="gallery">
+                            <img class="img-responsive" ng-src="{{item.imageURL}}" alt="{{item.description}}" title="{{item.name}}">
+                        </div>
+                        <h3>{{item.name}}</h3>
+                        <p class="para">{{item.description}}</p>
+                        <div class="rd_more">
+                            <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
+                        </div>
+                    </div>
                 </div>
-                <h3>produs 4</h3>
-                <p class="para">Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
-                <div class="rd_more">
-                  <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
                 </div>
-              </div>
-              <div class="special-grid">
-                <div class="gallery">
-                  <a href="images/pic1.jpg"><img src="images/pic1.jpg" title="image-name"></a>
                 </div>
-                <h3>produs 5</h3>
-                <p class="para">Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
-                <div class="rd_more">
-                  <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
-                </div>
-              </div>
-              <div class="special-grid spe-grid">
-                <div class="gallery">
-                  <a href="images/pic2.jpg"><img src="images/pic2.jpg" title="image-name"></a>
-                </div>
-                <h3>produs 6</h3>
-                <p class="para">Lorem ipsum dolor sit amet consectetur adiing elit. In volutpat luctus eros ac placerat. Quisque erat metus facilisis non feu,aliquam hendrerit quam. Donec ut lectus vel dolor adipiscing tincnt.</p>
-                <div class="rd_more">
-                  <a href="contact.html" class="btn">Contacteaza-l pe Danutz</a>
-                </div>
-              </div>
-              <div class="clear"> </div>
-            </div>
-            <div class="clear"> </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -149,7 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <div class="contact-social">
             <ul>
               <li>
-                <a href="#"><img src="images/facebook.png" title="facebook"></a>
+                <a href="https://www.facebook.com/profile.php?id=100006938468498&fref=ts"><img src="images/facebook.png" title="facebook"></a>
               </li>
             </ul>
           </div>

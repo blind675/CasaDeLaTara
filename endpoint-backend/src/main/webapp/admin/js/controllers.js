@@ -41,7 +41,7 @@ angular.module('casaDeLaTaraController', ['cloudinary','ngFileUpload'])
 
       if (resp.statusCode == 0) {
         console.log(resp);
-        $scope.postObject = null;
+        $scope.postObject = {};
       } else {
         $window.alert("A aparut o problema. Mai incearca o data si daca nu merge suna-l pe nepotu. 0745071490");
       }
